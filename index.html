@@ -297,6 +297,746 @@
       50%, 100% { opacity: 0; }
     }
 
+    .ilysm-text {
+      color: #fff;
+      font-style: italic;
+      margin-top: 20px;
+      font-size: 1.1em;
+      opacity: 0.95;
+      animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* NAVIGATION */
+    .nav-dots {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 40px 0 30px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--purple-mid);
+      cursor: pointer;
+      transition: all 0.4s ease;
+      opacity: 0.5;
+      animation: dotSlideIn 0.6s ease-out backwards;
+    }
+
+    .dot:nth-child(1) { animation-delay: 0.7s; }
+    .dot:nth-child(2) { animation-delay: 0.8s; }
+    .dot:nth-child(3) { animation-delay: 0.9s; }
+    .dot:nth-child(4) { animation-delay: 1s; }
+
+    @keyframes dotSlideIn {
+      from {
+        opacity: 0;
+        transform: scale(0);
+      }
+      to {
+        opacity: 0.5;
+        transform: scale(1);
+      }
+    }
+
+    .dot.active {
+      opacity: 1;
+      background: var(--purple-dark);
+      transform: scale(1.3);
+      box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+    }
+
+    .dot:hover:not(.active) {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
+
+    /* BUTTONS */
+    .button-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    button {
+      background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1em;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: buttonSlideIn 0.8s ease-out 1.1s both;
+      box-shadow: 0 4px 15px rgba(199, 125, 255, 0.3);
+    }
+
+    @keyframes buttonSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(199, 125, 255, 0.5);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* PROGRESS */
+    .progress-section {
+      margin-top: 40px;
+      animation: progressSlideIn 0.8s ease-out 1.2s both;
+    }
+
+    @keyframes progressSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .progress-text {
+      color: var(--purple-dark);
+      font-size: 0.95em;
+      margin-bottom: 12px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(210, 170, 255, 0.3);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid var(--accent);
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--purple-mid), var(--purple-light));
+      border-radius: 10px;
+      transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      width: 0%;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--purple-mid);
+      font-size: 0.95em;
+      line-height: 1.7;
+      opacity: 0.9;
+      animation: footerFadeIn 0.8s ease-out 1.3s both;
+    }
+
+    @keyframes footerFadeIn {
+      from { opacity: 0; }
+      to { opacity: 0.9; }
+    }
+
+    /* CONFETTI */
+    .confetti {
+      position: fixed;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    @keyframes confettiFall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* LOADING */
+    .loading {
+      text-align: center;
+      color: var(--purple-dark);
+      font-size: 1.2em;
+      font-weight: 500;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .subtitle {
+        font-size: 1.4em;
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
+
+      .memory-box {
+        padding: 25px;
+        min-height: 250px;
+      }
+
+      .memory-emoji {
+        font-size: 2.5em;
+      }
+
+      .memory-text {
+        font-size: 1.1em;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles" id="particlesContainer"></div>
+
+  <div class="container">
+    <h1>ashley 💜</h1>
+    <p class="subtitle">happy birthday</p>
+    
+    <div class="decoration">
+      <span>🌸</span>
+      <span>💜</span>
+      <span>🌸</span>
+    </div>
+
+    <div class="slides-container" id="slidesContainer">
+      <div class="loading">loading your memories...</div>
+    </div>
+
+    <div class="nav-dots" id="navDots"></div>
+
+    <div class="button-group">
+      <button id="prevBtn" onclick="prevSlide()">← back</button>
+      <button id="nextBtn" onclick="nextSlide()">next →</button>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-text">slide <span id="slideCounter">0</span> of <span id="slideTotal">0</span></div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      each moment with you is a memory i treasure forever 💜
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    let memories = [];
+    let ilysm = '';
+
+    // GENERATE FLOATING PARTICLES
+    function generateParticles() {
+      const container = document.getElementById('particlesContainer');
+      const types = ['small', 'medium', 'large'];
+      
+      for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = `particle ${types[Math.floor(Math.random() * types.length)]}`;
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        
+        const duration = 20 + Math.random() * 30;
+        particle.style.animation = `float ${duration}s linear infinite`;
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        
+        container.appendChild(particle);
+      }
+    }
+
+    // LOAD DATA FROM JSON
+    async function loadData() {
+      try {
+        const response = await fetch('ashley-data.json');
+        const data = await response.json();
+        memories = data.unlocks;
+        ilysm = data.ilysm;
+        createSlides();
+        initializeNavigation();
+      } catch (error) {
+        console.error('error loading data:', error);
+        document.getElementById('slidesContainer').innerHTML = 
+          '<p class="loading">oops! couldnt load the memories 💜</p>';
+      }
+    }
+
+    // CREATE SLIDES
+    function createSlides() {
+      const container = document.getElementById('slidesContainer');
+      container.innerHTML = '';
+
+      memories.forEach((memory, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'slide' + (index === 0 ? ' active' : '');
+        slide.id = `slide-${index}`;
+
+        slide.innerHTML = `
+          <div class="memory-box">
+            <div class="memory-emoji">${memory.emoji}</div>
+            <div class="memory-text" id="text-${index}"></div>
+            ${index === memories.length - 1 ? `<div class="ilysm-text">✨ ${ilysm} ✨</div>` : ''}
+          </div>
+        `;
+
+        container.appendChild(slide);
+      });
+
+      updateProgress();
+      typeCurrentSlide();
+    }
+
+    // TYPING ANIMATION
+    async function typeCurrentSlide() {
+      const textElement = document.getElementById(`text-${currentSlide}`);
+      if (!textElement) return;
+
+      const message = memories[currentSlide].message;
+      textElement.innerHTML = '';
+
+      for (let i = 0; i < message.length; i++) {
+        const span = document.createElement('span');
+        span.className = 'typing-text';
+        span.textContent = message[i];
+        textElement.appendChild(span);
+        await new Promise(resolve => setTimeout(resolve, 30));
+      }
+
+      const cursor = document.createElement('span');
+      cursor.className = 'cursor';
+      textElement.appendChild(cursor);
+    }
+
+    // NAVIGATION
+    function initializeNavigation() {
+      const container = document.getElementById('navDots');
+      container.innerHTML = '';
+
+      memories.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (index === 0 ? ' active' : '');
+        dot.onclick = () => goToSlide(index);
+        container.appendChild(dot);
+      });
+
+      document.getElementById('slideTotal').textContent = memories.length;
+      updateButtonStates();
+    }
+
+    function updateProgress() {
+      const fill = document.getElementById('progressFill');
+      const progress = ((currentSlide + 1) / memories.length) * 100;
+      fill.style.width = progress + '%';
+      document.getElementById('slideCounter').textContent = currentSlide + 1;
+    }
+
+    function updateButtonStates() {
+      document.getElementById('prevBtn').disabled = currentSlide === 0;
+      document.getElementById('nextBtn').disabled = currentSlide === memories.length - 1;
+    }
+
+    // SLIDE NAVIGATION
+    function nextSlide() {
+      if (currentSlide < memories.length - 1) {
+        document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+        document.getElementById(`slide-${currentSlide}`).classList.add('prev');
+        
+        currentSlide++;
+        
+        document.getElementById(`slide-${currentSlide}`).classList.remove('prev');
+        document.getElementById(`slide-${currentSlide}`).classList.add('active');
+
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentSlide);
+        });
+
+        updateProgress();
+        updateButtonStates();
+        typeCurrentSlide();
+        triggerConfetti();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+        
+        currentSlide--;
+        
+        document.getElementById(`slide-${currentSlide}`).classList.add('active');
+        document.getElementById(`slide-${currentSlide}`).classList.remove('prev');
+
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentSlide);
+        });
+
+        updateProgress();
+        updateButtonStates();
+        typeCurrentSlide();
+      }
+    }
+
+    function goToSlide(index) {
+      if (index !== currentSlide) {
+        document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+        if (index > currentSlide) {
+          document.getElementById(`slide-${currentSlide}`).classList.add('prev');
+        }
+        
+        currentSlide = index;
+        
+        document.getElementById(`slide-${currentSlide}`).classList.add('active');
+        document.getElementById(`slide-${currentSlide}`).classList.remove('prev');
+
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentSlide);
+        });
+
+        updateProgress();
+        updateButtonStates();
+        typeCurrentSlide();
+        triggerConfetti();
+      }
+    }
+
+    // CONFETTI ANIMATION
+    function triggerConfetti() {
+      for (let i = 0; i < 20; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.textContent = ['🎉', '💜', '✨', '🌸'][Math.floor(Math.random() * 4)];
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = '50%';
+        confetti.style.fontSize = 1.5 + Math.random() * 1 + 'em';
+        confetti.style.animation = `confettiFall ${2 + Math.random() * 1}s linear`;
+        document.body.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 3000);
+      }
+    }
+
+    // KEYBOARD NAVIGATION
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // INITIALIZE
+    generateParticles();
+    loadData();
+  </script>
+</body>
+</html>    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* FLOATING PARTICLES */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--purple-light);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    .particle.small { width: 2px; height: 2px; }
+    .particle.medium { width: 4px; height: 4px; }
+    .particle.large { width: 6px; height: 6px; }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(15px);
+      border-radius: 40px;
+      padding: 60px 40px;
+      box-shadow: 0 20px 60px rgba(178, 107, 237, 0.2);
+      border: 2px solid rgba(210, 170, 255, 0.4);
+      position: relative;
+      z-index: 10;
+      animation: containerPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      overflow: hidden;
+    }
+
+    @keyframes containerPop {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* HEADER */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2em;
+      color: var(--purple-dark);
+      text-align: center;
+      margin-bottom: 5px;
+      letter-spacing: -1px;
+      animation: titleSlideIn 0.8s ease-out 0.2s both;
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple-mid));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @keyframes titleSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--purple-mid);
+      font-family: 'Caveat', cursive;
+      font-size: 1.8em;
+      margin-bottom: 40px;
+      animation: subtitleFadeIn 0.8s ease-out 0.4s both;
+      font-weight: 400;
+    }
+
+    @keyframes subtitleFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .decoration {
+      text-align: center;
+      font-size: 1.8em;
+      margin: 20px 0;
+      animation: decorationBounce 0.8s ease-out 0.6s both;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    @keyframes decorationBounce {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .decoration span {
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .decoration span:nth-child(1) { animation-delay: 0s; }
+    .decoration span:nth-child(2) { animation-delay: 0.2s; }
+    .decoration span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+    }
+
+    /* SLIDES CONTAINER */
+    .slides-container {
+      perspective: 1000px;
+      min-height: 500px;
+      position: relative;
+      margin: 40px 0;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transform: translateX(100px) rotateY(20deg);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: translateX(0) rotateY(0deg);
+      pointer-events: auto;
+      z-index: 10;
+    }
+
+    .slide.prev {
+      opacity: 0;
+      transform: translateX(-100px) rotateY(-20deg);
+      z-index: 5;
+    }
+
+    /* MEMORY BOX */
+    .memory-box {
+      background: linear-gradient(135deg, var(--purple-light), rgba(224, 170, 255, 0.5));
+      border: 2px solid var(--accent);
+      border-radius: 25px;
+      padding: 40px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      animation: memorySlideUp 0.8s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .memory-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: movePattern 20s linear infinite;
+    }
+
+    @keyframes movePattern {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(20px, 20px); }
+    }
+
+    @keyframes memorySlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .memory-emoji {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      animation: emojiPulse 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes emojiPulse {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .memory-text {
+      color: #fff;
+      font-size: 1.3em;
+      line-height: 1.8;
+      font-weight: 500;
+      min-height: 100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* TYPING ANIMATION */
+    .typing-text {
+      display: inline;
+      animation: typing 0.05s steps(1);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.3em;
+      background: #fff;
+      margin-left: 4px;
+      animation: blink 0.7s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
     .fun-fact {
       color: #fff;
       font-style: italic;
